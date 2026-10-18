@@ -1,0 +1,137 @@
+/* Custom Variable Styling for Bootstrap Adaptations */
+:root {
+    --win11-taskbar-bg: rgba(243, 243, 243, 0.85);
+    --win11-window-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    user-select: none; }
+
+/* 1. LOCK SCREEN STYLES */
+#lock-screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%);
+    background-size: cover;
+    transition: transform 0.5s ease-in-out;
+}
+.animate-pulse button {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* 2. DESKTOP SYSTEM BACKGROUND */
+#desktop-environment {
+    width: 100vw;
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=2832') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+/* DESKTOP APP ICONS GRID LAYOUT */
+.desktop-icons {
+    width: max-content;
+    height: calc(100vh - 50px);
+}
+.desktop-icon {
+    width: 85px;
+    padding: 8px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.desktop-icon:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+.icon-wrapper i {
+    font-size: 2.2rem;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5));
+}
+.desktop-icon span {
+    font-size: 12px;
+    display: block;
+    margin-top: 4px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+/* 3. SIMULATED WINDOW (OS-WINDOW FRAMEWORK) */
+.os-window {
+    position: absolute;
+    border-radius: 8px !important;
+    overflow: hidden;
+    box-shadow: var(--win11-window-shadow);
+    border: 1px solid rgba(255,255,255,0.2);
+    min-width: 300px;
+    min-height: 200px;
+}
+.window-header {
+    cursor: move; /* Indicates drag capability to the user */
+    user-select: none;
+}
+.window-content {
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* 4. TASKBAR SCHEDULING SYSTEM */
+#taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background: var(--win11-taskbar-bg);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    z-index: 9000;
+}
+.taskbar-icon img {
+    transition: transform 0.1s ease;
+}
+.taskbar-icon:hover img {
+    transform: scale(1.15);
+}
+.search-bar-container {
+    border: 1px solid #e0e0e0;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* 5. WINDOWS 11 START MENU ACCORDION BOX */
+#start-menu {
+    position: absolute;
+    bottom: 56px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 520px;
+    height: 400px;
+    background: rgba(243, 243, 243, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 8px;
+    z-index: 9100;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+.start-menu-item {
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.2s;
+}
+.start-menu-item:hover {
+    background: rgba(0,0,0,0.05);
+}
+.cursor-pointer { cursor: pointer; }
+.bg-purple { background-color: #6f42c1 !important; color: white; }

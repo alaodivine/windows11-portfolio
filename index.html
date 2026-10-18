@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio - Windows 11 OS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="lock-screen" class="d-flex flex-column justify-content-between align-items-center text-white text-center py-5">
+        <div class="mt-5">
+            <h1 id="lock-time" class="display-1 fw-bold">00:00</h1>
+            <p id="lock-date" class="fs-4 text-light">Monday, January 1</p>
+        </div>
+        <div class="mb-5 animate-pulse">
+            <button class="btn btn-outline-light btn-lg rounded-pill px-4" onclick="unlockDesktop()">
+                Click to Enter <i class="bi bi-arrow-right-short"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="desktop-environment" class="d-none">
+        
+        <div class="desktop-icons d-flex flex-column align-items-start gap-3 p-3">
+            <!-- Change 'dblclick' to 'ondblclick' on all your desktop icons -->
+<div class="desktop-icon text-center" ondblclick="openWindow('win-about')">
+    <div class="icon-wrapper"><i class="bi bi-person-workspace text-primary"></i></div>
+    <span>About Me</span>
+</div>
+
+<div class="desktop-icon text-center" ondblclick="openWindow('win-projects')">
+    <div class="icon-wrapper"><i class="bi bi-folder-fill text-warning"></i></div>
+    <span>My Projects</span>
+</div>
+
+<div class="desktop-icon text-center" ondblclick="openWindow('win-skills')">
+    <div class="icon-wrapper"><i class="bi bi-cpu-fill text-info"></i></div>
+    <span>Skills</span>
+</div>
+
+<div class="desktop-icon text-center" ondblclick="openWindow('win-contact')">
+    <div class="icon-wrapper"><i class="bi bi-envelope-at-fill text-success"></i></div>
+    <span>Contact Me</span>
+</div>
+
+<div class="desktop-icon text-center" ondblclick="openWindow('win-resume')">
+    <div class="icon-wrapper"><i class="bi bi-file-earmark-pdf-fill text-danger"></i></div>
+    <span>Resume</span>
+</div>
+            </div>
+        </div>
+
+        <div id="win-about" class="os-window card shadow-lg d-none" style="top: 10%; left: 15%; width: 500px;">
+            <div class="window-header card-header d-flex justify-content-between align-items-center bg-dark text-white p-2">
+                <div class="window-title ps-2"><i class="bi bi-person-workspace me-2"></i>About Me</div>
+                <div class="window-controls d-flex gap-1">
+                    <button class="btn btn-sm btn-secondary py-0 px-2" onclick="minimizeWindow('win-about')">-</button>
+                    <button class="btn btn-sm btn-secondary py-0 px-2" onclick="maximizeWindow('win-about')">▢</button>
+                    <button class="btn btn-sm btn-danger py-0 px-2" onclick="closeWindow('win-about')">X</button>
+                </div>
+            </div>
+            <div class="window-content card-body bg-light overflow-auto" style="height: 350px;">
+                <h5 class="card-title fw-bold">Hello World! 👋</h5>
+                <p>I'm a Level 1 student at <strong>SQI College of ICT</strong>, specializing in frontend development architectures.</p>
+                <hr>
+                <h6>Education</h6>
+                <ul>
+                    <li>SQI College of ICT - Software Engineering Track</li>
+                    <li>Self-Taught & Build-Driven Curriculum</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="win-projects" class="os-window card shadow-lg d-none" style="top: 12%; left: 25%; width: 750px;">
+            <div class="window-header card-header d-flex justify-content-between align-items-center bg-dark text-white p-2">
+                <div class="window-title ps-2"><i class="bi bi-folder-fill me-2 text-warning"></i>My Projects</div>
+                <div class="window-controls d-flex gap-1">
+                    <button class="btn btn-sm btn-secondary py-0 px-2" onclick="minimizeWindow('win-projects')">-</button>
+                    <button class="btn btn-sm btn-secondary py-0 px-2" onclick="maximizeWindow('win-projects')">▢</button>
+                    <button class="btn btn-sm btn-danger py-0 px-2" onclick="closeWindow('win-projects')">X</button>
+                </div>
+            </div>
+            <div class="window-content card-body bg-light overflow-auto" style="height: 450px;">
+                <div class="row g-3" id="projects-container">
+                    </div>
+            </div>
+        </div>
+
+        <div id="win-skills" class="os-window card shadow-lg d-none" style="top: 15%; left: 20%; width: 450px;">
+            <div class="window-header card-header d-flex justify-content-between align-items-center bg-dark text-white p-2">
+                <div class="window-title ps-2"><i class="bi bi-cpu-fill me-2 text-info"></i>Technical Skills</div>
+                <div class="window-controls d-flex gap-1">
+                    <button class="btn btn-sm btn-secondary py-0 px-2" onclick="minimizeWindow('win-skills')">-</button>
+                    <button class="btn btn-sm btn-secondary py-0 px-2" onclick="maximizeWindow('win-skills')">▢</button>
+                    <button class="btn btn-sm btn-danger py-0 px-2" onclick="closeWindow('win-skills')">X</button>
+                </div>
+            </div>
+            <div class="window-content card-body bg-light" style="height: 300px;">
+                <label class="form-label fw-bold">HTML5</label>
+                <div class="progress mb-3" style="height: 20px;">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 90%;">90%</div>
+                </div>
+                <label class="form-label fw-bold">CSS3 & Grid/Flexbox</label>
+                <div class="progress mb-3" style="height: 20px;">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%;">85%</div>
+                </div>
+                <label class="form-label fw-bold">Bootstrap 5</label>
+                <div class="progress mb-3" style="height: 20px;">
+                    <div class="progress-bar bg-purple style-bootstrap" role="progressbar" style="width: 80%;">80%</div>
+                </div>
+                <label class="form-label fw-bold">Vanilla JavaScript</label>
+                <div class="progress mb-3" style="height: 20px;">
+                    <div class="progress-bar bg-warning text-dark" role="progressbar" style="width: 65%;">65%</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="win-contact" class="os-window card shadow-lg d-none" style="top: 18%; left: 30%; width: 500px;">
+            <div class="window-header card-header d-flex justify-content-between align-items-center bg-dark text-white p-2">
+                <div class="window-title ps-2"><i class="bi bi-envelope-at-fill me-2 text-success"></i>Contact Me</div>
+                <div class="window-controls d-flex gap-1">
+                    <button class="btn btn-sm btn-secondary py-0 px-2" onclick="minimizeWindow('win-contact')">-</button>
+                    <button class="btn btn-sm btn-secondary py-0 px-2" onclick="maximizeWindow('win-contact')">▢</button>
+                    <button class="btn btn-sm btn-danger py-0 px-2" onclick="closeWindow('win-contact')">X</button>
+                </div>
+            </div>
+            <div class="window-content card-body bg-light">
+                <form onsubmit="event.preventDefault(); alert('Message simulation sent successfully!');">
+                    <div class="mb-3">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" class="form-control" required placeholder="John Doe">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email address</label>
+                        <input type="email" class="form-control" required placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="3" required placeholder="Let's collaborate..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="win-resume" class="os-window card shadow-lg d-none" style="top: 8%; left: 40%; width: 450px;">
+            <div class="window-header card-header d-flex justify-content-between align-items-center bg-dark text-white p-2">
+                <div class="window-title ps-2"><i class="bi bi-file-earmark-pdf-fill me-2 text-danger"></i>Curriculum Vitae</div>
+                <div class="window-controls d-flex gap-1">
+                    <button class="btn btn-sm btn-secondary py-0 px-2" onclick="minimizeWindow('win-resume')">-</button>
+                    <button class="btn btn-sm btn-secondary py-0 px-2" onclick="maximizeWindow('win-resume')">▢</button>
+                    <button class="btn btn-sm btn-danger py-0 px-2" onclick="closeWindow('win-resume')">X</button>
+                </div>
+            </div>
+            <div class="window-content card-body bg-light text-center py-4">
+                <i class="bi bi-file-pdf display-1 text-danger mb-3"></i>
+                <h5>My Professional Resume</h5>
+                <p class="text-muted small">Available for review or offline download</p>
+                <a href="#" class="btn btn-danger mt-2" onclick="alert('Link your real resume file path here!')">
+                    <i class="bi bi-download me-2"></i>Download PDF CV
+                </a>
+            </div>
+        </div>
+
+        <div id="start-menu" class="card shadow-lg p-3 d-none">
+            <h6 class="text-muted mb-3 small">Pinned Apps</h6>
+            <div class="row row-cols-3 text-center g-2">
+                <div class="col start-menu-item p-2 rounded" onclick="toggleStartMenu(); openWindow('win-about')">
+                    <i class="bi bi-person-workspace text-primary fs-3 d-block"></i> About
+                </div>
+                <div class="col start-menu-item p-2 rounded" onclick="toggleStartMenu(); openWindow('win-projects')">
+                    <i class="bi bi-folder-fill text-warning fs-3 d-block"></i> Projects
+                </div>
+                <div class="col start-menu-item p-2 rounded" onclick="toggleStartMenu(); openWindow('win-skills')">
+                    <i class="bi bi-cpu-fill text-info fs-3 d-block"></i> Skills
+                </div>
+            </div>
+            <hr>
+            <div class="d-flex align-items-center justify-content-between p-2 bg-light rounded mt-auto">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="rounded-circle bg-dark text-white px-2 py-1 small">SQI</div>
+                    <span class="small fw-bold">Developer Student</span>
+                </div>
+                <i class="bi bi-power text-danger cursor-pointer" onclick="location.reload()"></i>
+            </div>
+        </div>
+
+        <footer id="taskbar" class="d-flex align-items-center justify-content-between px-3">
+            <div class="taskbar-left small text-white-50"><i class="bi bi-cloud-sun"></i> 24°C</div>
+            
+            <div class="taskbar-center d-flex align-items-center gap-1">
+                <button class="taskbar-icon btn btn-link" id="btn-start" onclick="toggleStartMenu()">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg" alt="Start" style="width:20px;">
+                </button>
+                
+                <div class="search-bar-container d-none d-md-flex align-items-center px-2 bg-white rounded-pill mx-2">
+                    <i class="bi bi-search text-muted small me-1"></i>
+                    <input type="text" placeholder="Search" class="border-0 bg-transparent text-dark small py-1" style="outline:none; width:100px;">
+                </div>
+                
+                <button class="taskbar-icon btn text-white btn-sm" onclick="openWindow('win-about')"><i class="bi bi-person-workspace text-primary"></i></button>
+                <button class="taskbar-icon btn text-white btn-sm" onclick="openWindow('win-projects')"><i class="bi bi-folder-fill text-warning"></i></button>
+            </div>
+            
+            <div class="taskbar-right text-white d-flex align-items-center gap-3">
+                <div class="tray-icons d-none d-sm-flex align-items-center gap-2 text-white-50">
+                    <i class="bi bi-wifi"></i>
+                    <i class="bi bi-volume-up"></i>
+                    <i class="bi bi-battery-charging"></i>
+                </div>
+                <div class="text-end line-height-1">
+                    <div id="taskbar-time" class="fw-bold small">00:00</div>
+                    <div id="taskbar-date" class="text-white-50 small" style="font-size: 10px;">01/01/2026</div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="project.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
