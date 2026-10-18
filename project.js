@@ -8,8 +8,8 @@ const portfolioProjects = [
         description: "A fully interactive operating system simulation built to showcase my frontend applications.",
         image: "https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=500", 
         techUsed: ["HTML5", "CSS3", "Bootstrap 5", "Vanilla JS"],
-        liveLink: "#", 
-        githubLink: "#"
+        liveLink: "https://windows11-portfolio-lemon.vercel.app/", 
+        githubLink: "https://github.com/alaodivine/windows11-portfolio"
     },
     {
         title: "MTN Nigeria Clone",
